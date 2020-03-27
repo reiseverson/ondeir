@@ -104,7 +104,7 @@ class Home extends Component {
               />
             }
             
-            <a href="https://translate.google.com/translate?sl=en%2Ftl=pt%2Fu=https%3A%2F%2Fwww.who.int%2Femergencies%2Fdiseases%2Fnovel-coronavirus-2019" target="_blank" rel="noopener noreferrer" className={ `who-button${this.state.showResults ? ' visible' : ''}` }>
+            <a href="https://coronavirus.saude.gov.br/" target="_blank" rel="noopener noreferrer" className={ `who-button${this.state.showResults ? ' visible' : ''}` }>
                 Quem mandou?
             </a>
           </div>

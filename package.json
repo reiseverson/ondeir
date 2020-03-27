@@ -2,10 +2,6 @@
   "name": "ondeir",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "npm": "6.9.0",
-    "node": "12.14.1"
-  },
   "dependencies": {
     "@material/react-snackbar": "^0.15.0",
     "@testing-library/jest-dom": "^4.2.4",
