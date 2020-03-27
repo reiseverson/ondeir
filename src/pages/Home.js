@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Typewriter from 'typewriter-effect'
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 
@@ -22,7 +21,10 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    if(this.state.fm === undefined) this.props.history.push('/fm/')
+    if(this.state.fm === undefined){
+      this.props.history.push('/fm/')
+      this.setState({ fm: 'fm' })
+    } 
     else if(this.state.fm === 'ex') this.setState({ sentence: 'Fique em CASA porra!' })
   }
 
@@ -30,7 +32,7 @@ class Home extends Component {
     console.log('open') 
     this.setState({ snackActive: true }, () => {
       setTimeout(() => {
-        this.setState({ snackActive: false });
+        this.setState({ snackActive: false })
       }, 3000);
     });
   }
@@ -88,7 +90,7 @@ class Home extends Component {
             <button className="search">Buscar</button>
           </form>
         </div>
-          <div className="content">
+          <div className={ `content${this.state.fm === 'ex' ? ' ex' : ''}` }>
             {
               !this.state.loading &&
               <Typewriter
@@ -102,9 +104,9 @@ class Home extends Component {
               />
             }
             
-            <Link to="https://translate.google.com/translate?sl=en%2Ftl=pt%2Fu=https%3A%2F%2Fwww.who.int%2Femergencies%2Fdiseases%2Fnovel-coronavirus-2019" target="_blank" className={ `who-button${this.state.showResults ? ' visible' : ''}` }>
+            <a href="https://translate.google.com/translate?sl=en%2Ftl=pt%2Fu=https%3A%2F%2Fwww.who.int%2Femergencies%2Fdiseases%2Fnovel-coronavirus-2019" target="_blank" rel="noopener noreferrer" className={ `who-button${this.state.showResults ? ' visible' : ''}` }>
                 Quem mandou?
-            </Link>
+            </a>
           </div>
           <div className={ `share
                               ${this.state.showResults ? ' visible' : ''}
