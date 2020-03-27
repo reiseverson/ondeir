@@ -6,7 +6,7 @@ import Home from './pages/Home'
 export default function routes(){
     return (
         <BrowserRouter>
-            <Route path="/:city?/:fm?" component={Home}  />
+            <Route path="/:fm?/:city?" component={Home}  />
         </BrowserRouter>
     )
 }
